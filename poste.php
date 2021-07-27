@@ -26,10 +26,6 @@ include "./head.php";
           <tr>
             <td><?= $poste->id; ?></td>
             <td><?= $poste->nom; ?></td>
-            <td>
-              <a href="edit.php?id=<?= $poste->id; ?>" class="btn btn-info">Editer</a>
-              <a href="delete.php?monid=<?= $poste->id; ?>" class='btn btn-danger'>Supprimer</a>
-            </td>
           </tr>
           <?php endforeach; ?>
       </table>

@@ -26,10 +26,6 @@ include "./head.php";
           <tr>
             <td><?= $club->id; ?></td>
             <td><?= $club->nom; ?></td>
-            <td>
-              <a href="edit.php?id=<?= $club->id; ?>" class="btn btn-info">Editer</a>
-              <a href="delete.php?monid=<?= $club->id; ?>" class='btn btn-danger'>Supprimer</a>
-            </td>
           </tr>
           <?php endforeach; ?>
       </table>

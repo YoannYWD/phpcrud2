@@ -6,7 +6,7 @@ $password = "Arinfo/2021";
 $options = [];
 $connection = new PDO($dsn, $username, $password, $options);
 try {
-    print "Connexion réussie";
+
 } catch(PDOException $e) {
     print "error : " . $e->getMessage();
     die();

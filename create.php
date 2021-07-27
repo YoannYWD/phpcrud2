@@ -1,15 +1,15 @@
 <?php
 require "./db.php";
 
-$sqlClub = "SELECT * FROM club;";
-$statementClub = $connection->prepare($sqlClub);
-$statementClub->execute();
-$clubs = $statementClub->fetchAll(PDO::FETCH_OBJ);
+$sql = "SELECT * FROM club;";
+$statement = $connection->prepare($sql);
+$statement->execute();
+$clubs = $statement->fetchAll(PDO::FETCH_OBJ);
 
-$sqlPoste = "SELECT * FROM poste;";
-$statementPoste = $connection->prepare($sqlPoste);
-$statementPoste->execute();
-$postes = $statementPoste->fetchAll(PDO::FETCH_OBJ);
+$sql = "SELECT * FROM poste;";
+$statement = $connection->prepare($sql);
+$statement->execute();
+$postes = $statement->fetchAll(PDO::FETCH_OBJ);
 
 $message = "";
 if(isset($_POST["nom"]) && isset($_POST["numero"]) && isset($_POST["poste"]) && isset($_POST["club"])) {

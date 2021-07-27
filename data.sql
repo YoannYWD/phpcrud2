@@ -47,7 +47,11 @@ VALUES
 ("petric", 30, 4, 4);
 
 
-
+SELECT joueur.id, joueur.nom, joueur.numero, poste.nom AS poste, club.nom AS club FROM joueur
+INNER JOIN poste
+ON poste.id = joueur.poste
+INNER JOIN club
+ON club.id = joueur.club;
 
 
 

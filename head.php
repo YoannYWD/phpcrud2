@@ -31,9 +31,6 @@
                 <a class="nav-link" href="/phpcrud2/create.php">Ajouter un joueur</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="/phpcrud2/edit.php">Modifier un joueur</a>
-                </li>
-                <li class="nav-item">
                 <a class="nav-link" href="/phpcrud2/db.php">DB</a>
                 </li>
             </ul>

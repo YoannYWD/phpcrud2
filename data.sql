@@ -53,7 +53,4 @@ ON poste.id = joueur.poste
 INNER JOIN club
 ON club.id = joueur.club;
 
-
-
-
 SELECT * FROM joueur;

@@ -1,7 +1,3 @@
-<?php
-include "./head.php";
-?>
-
 <?php 
 
 $dsn = "mysql:host=localhost;dbname=footballclub";

@@ -40,7 +40,7 @@ include "./head.php";
             <td><?= $joueur->club; ?></td>
             <td>
               <a href="edit.php?id=<?= $joueur->id; ?>" class="btn btn-info">Editer</a>
-              <a href="delete.php?monid=<?= $joueur->id; ?>" class='btn btn-danger'>Supprimer</a>
+              <a href="delete.php?id=<?= $joueur->id; ?>" class='btn btn-danger'>Supprimer</a>
             </td>
           </tr>
           <?php endforeach; ?>

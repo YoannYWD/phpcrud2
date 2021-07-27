@@ -12,17 +12,19 @@ $statementPoste->execute();
 $postes = $statementPoste->fetchAll(PDO::FETCH_OBJ);
 
 $message = "";
-if(isset($_POST["nom"]) && isset($_POST["numero"]) && isset($_POST["position"])) {
+if(isset($_POST["nom"]) && isset($_POST["numero"]) && isset($_POST["poste"]) && isset($_POST["club"])) {
     $nom = $_POST["nom"];
     $numero = $_POST["numero"];
-    $position = $_POST["position"];
-    $sql = "INSERT INTO joueur (nom, numero, position) VALUES (:nom, :numero, :position)";
+    $poste = $_POST["poste"];
+    $club = $_POST["club"];
+    $sql = "INSERT INTO joueur (nom, numero, poste, club) VALUES (:nom, :numero, :poste, :club)";
     $statement = $connection->prepare($sql);
     if($statement->execute(
         [
             ":nom" => $nom, 
             ":numero" => $numero, 
-            ":position" => $position
+            ":poste" => $poste,
+            ":club" => $club
         ]
         )) {
         $message = "Joueur ajouté avec succès";
@@ -55,8 +57,8 @@ include "./head.php";
               </div>
               <div class="mb-3">
                 <label>Poste</label>
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Choisissez le poste</option>
+                <select class="form-select" name="poste" aria-label="Default select example">
+                  <option selected disabled>Choisissez le poste</option>
                   <?php foreach($postes as $poste): ?>
                     <option value="<?= $poste->id; ?>"><?= $poste->nom; ?></option>
                   <?php endforeach; ?>
@@ -64,8 +66,8 @@ include "./head.php";
               </div>
               <div class="mb-3">
                 <label>Club</label>
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Choisissez le club</option>
+                <select class="form-select"  name="club" aria-label="Default select example">
+                  <option selected disabled>Choisissez le club</option>
                   <?php foreach($clubs as $club): ?>
                     <option value="<?= $club->id; ?>"><?= $club->nom; ?></option>
                   <?php endforeach; ?>

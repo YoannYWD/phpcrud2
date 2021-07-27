@@ -4,7 +4,8 @@ $sql = "SELECT joueur.id, joueur.nom, joueur.numero, poste.nom AS poste, club.no
         INNER JOIN poste
         ON poste.id = joueur.poste
         INNER JOIN club
-        ON club.id = joueur.club;";
+        ON club.id = joueur.club
+        ORDER BY joueur.id ASC;";
 $statement = $connection->prepare($sql);
 $statement->execute();
 $joueurs = $statement->fetchAll(PDO::FETCH_OBJ);
